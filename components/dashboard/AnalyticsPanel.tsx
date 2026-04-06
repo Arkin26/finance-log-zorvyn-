@@ -75,6 +75,8 @@ export default function AnalyticsPanel() {
 
   const summary = query.data;
 
+  if (!summary) return null;
+
   return (
     <div className="space-y-6">
       <div className="grid gap-6 lg:grid-cols-3">
