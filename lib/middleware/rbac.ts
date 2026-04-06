@@ -21,8 +21,13 @@ type Handler = (
   ctx: WithRoleContext
 ) => Promise<NextResponse> | NextResponse;
 
-export function withRole(minRole: UserRole, handler: Handler): Handler {
-  return async (req: NextRequest) => {
+type NextRouteHandler = (
+  req: NextRequest,
+  routeContext?: any
+) => Promise<NextResponse> | NextResponse;
+
+export function withRole(minRole: UserRole, handler: Handler): NextRouteHandler {
+  return async (req: NextRequest, routeContext?: any) => {
     const supabase = createSupabaseServerClient();
 
     const {

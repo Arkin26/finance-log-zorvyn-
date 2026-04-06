@@ -11,7 +11,7 @@ function getFocusableElements(container: HTMLElement) {
     "select:not([disabled])",
     "[tabindex]:not([tabindex='-1'])"
   ];
-  return Array.from(container.querySelectorAll(selectors.join(",")));
+  return Array.from(container.querySelectorAll<HTMLElement>(selectors.join(",")));
 }
 
 export default function Modal({
