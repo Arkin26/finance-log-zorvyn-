@@ -116,6 +116,8 @@ export default function DashboardPage() {
 
   const summary = query.data;
 
+  if (!summary) return null;
+
   return (
     <div className="space-y-6">
       {/* Stats Row */}
