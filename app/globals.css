@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Geist Mono', monospace;
+  @apply bg-[#eef0f8] text-zinc-900;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c5c9f0;
+  border-radius: 999px;
+}
+
+/* Smooth transitions everywhere */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, box-shadow, opacity;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
